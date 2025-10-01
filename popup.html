@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Detection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Main container for the popup -->
+  <div class="container">
+    
+    <!-- Header section with extension name and icon -->
+    <div class="header">
+      <div class="header-icon">🛡️</div>
+      <h1>Phishing Detector</h1>
+    </div>
+    
+    <!-- Status section - shows if site is safe or dangerous -->
+    <div id="status-container">
+      <div id="status" class="status-safe">
+        <div class="status-icon">✓</div>
+        <div class="status-text">Analyzing...</div>
+      </div>
+    </div>
+    
+    <!-- URL display section -->
+    <div class="url-section">
+      <div class="label">Current URL:</div>
+      <div id="current-url" class="url-text">Loading...</div>
+    </div>
+    
+    <!-- Threats list section - shows detected issues -->
+    <div id="threats-container" style="display: none;">
+      <div class="section-title">⚠️ Detected Issues:</div>
+      <div id="threats-list"></div>
+    </div>
+    
+    <!-- Safe message when no threats detected -->
+    <div id="safe-message" style="display: none;">
+      <div class="safe-box">
+        <div class="safe-icon">✓</div>
+        <p>No phishing indicators detected on this site.</p>
+        <p class="safe-note">However, always verify URLs before entering sensitive information.</p>
+      </div>
+    </div>
+    
+    <!-- Information section explaining the checks -->
+    <div class="info-section">
+      <details>
+        <summary>What do we check?</summary>
+        <ul class="info-list">
+          <li>✓ HTTPS encryption</li>
+          <li>✓ Suspicious domain extensions (.ru, .tk, .xyz, etc.)</li>
+          <li>✓ Lookalike domains (paypa1.com, g00gle.com)</li>
+          <li>✓ Excessive subdomains or URL length</li>
+          <li>✓ IP addresses instead of domain names</li>
+          <li>✓ Suspicious keywords and patterns</li>
+        </ul>
+      </details>
+    </div>
+    
+    <!-- Footer with tips -->
+    <div class="footer">
+      <small>💡 Tip: Always double-check URLs before entering passwords!</small>
+    </div>
+    
+  </div>
+  
+  <!-- JavaScript for popup functionality -->
+  <script src="popup.js"></script>
+</body>
+</html>
